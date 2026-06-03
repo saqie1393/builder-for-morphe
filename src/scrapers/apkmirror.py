@@ -64,7 +64,7 @@ class APKMirrorScraper(BaseScraper):
         soup_final = _parse_html(self.net.get(btn_url))
         dl_link = soup_final.select_one("span > a[rel=nofollow]")
         final_url = urljoin(APK_MIRROR_BASE, dl_link["href"])
-        out_path = dest.with_name(f"{dest.name}{'.apkm' if is_bundle else ''}")
+        out_path = dest.with_suffix(".apkm") if is_bundle else dest
         self.net.download(final_url, out_path)
         return DownloadResult(path=out_path, is_bundle=is_bundle)
 

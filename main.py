@@ -19,7 +19,7 @@ from src.core.config import (
     parse_config,
 )
 from src.core.gh_utils import check_builds_needed, combine_logs, get_matrix
-from src.core.logger import abort, epr, pr
+from src.core.logger import IS_GITHUB, abort, epr, pr
 from src.core.network import NetworkManager
 
 _shutting_down = False
@@ -52,7 +52,7 @@ def _require_java(min_version: int = 21) -> None:
         abort(f"Java {version} found, but Java {min_version}+ is required")
 
 def _require_ci(cmd: str) -> None:
-    if os.getenv("GITHUB_ACTIONS") != "true":
+    if not IS_GITHUB:
         abort(f"'{cmd}' is only available in GitHub Actions")
 
 def _build(target_app: str | None = None, arch_override: str | None = None) -> int:

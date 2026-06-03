@@ -16,13 +16,6 @@ class PatcherError(Exception):
 class SignatureError(PatcherError):
     """Raised when sig.txt has no entry for a package, or apksigner reports a hash mismatch."""
 
-def _arch_to_libs(arch: str) -> str:
-    match arch:
-        case "armeabi-v7a" | "arm64-v8a" | "x86" | "x86_64":
-            return arch
-        case _:
-            return "arm64-v8a,armeabi-v7a"
-
 def _run_java(*args: str | Path, capture: bool = True, timeout: int = 600) -> str:
     result = subprocess.run(["java", *(str(a) for a in args)], capture_output=capture, text=True, timeout=timeout)
     combined = (result.stdout or "") + (result.stderr or "")
@@ -88,8 +81,7 @@ class PatcherCLI:
         return get_highest_ver(versions)
 
     def resolve_auto_patches(self, list_patches_output: str) -> tuple[str, str]:
-        microg_patch = ""
-        psu_patch = ""
+        microg_patch = psu_patch = ""
         for line in list_patches_output.splitlines():
             if not line.lower().startswith("name:"):
                 continue
@@ -119,14 +111,14 @@ class PatcherCLI:
         p_args.extend(extra_args)
         for auto_p in active_auto:
             p_args.extend(("-e", auto_p))
-        p_args.extend(("--striplibs", _arch_to_libs(arch)))
+        p_args.extend(("--striplibs", "arm64-v8a,armeabi-v7a" if arch == "all" else arch))
         return p_args
 
     def patch(self, stock_apk: Path, output_apk: Path, patch_args: list[str]) -> None:
         tmp_files_dir = output_apk.parent / f"tmp-{output_apk.stem}"
         base_cmd = ["-jar", self.cli_jar, "patch", stock_apk, "--purge", "-o", output_apk, "-p", self.patches_mpp, "-t", tmp_files_dir]
         ks_args: list[str] = []
-        if self.ks_path and (ks_pass := os.getenv("KEYSTORE_PASS", "")) and (ks_alias := os.getenv("KEYSTORE_ALIAS", "")):
+        if self.ks_path and (ks_pass := os.getenv("KEYSTORE_PASS")) and (ks_alias := os.getenv("KEYSTORE_ALIAS")):
             ks_args = [f"--keystore={self.ks_path}", f"--keystore-entry-password={ks_pass}", f"--keystore-password={ks_pass}", f"--signer={ks_alias}", f"--keystore-entry-alias={ks_alias}"]
         elif Path("morphe.keystore").exists():
             ks_args = ["--keystore=morphe.keystore"]

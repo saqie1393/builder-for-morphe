@@ -41,18 +41,15 @@ class AppEntry:
     skip_sigcheck: bool
     enabled: bool
 
-    @property
-    def dl_from(self) -> str | None:
-        return next(iter(self.dl_urls), None)
-
 def load_toml(path: Path) -> dict[str, object]:
     with path.open("rb") as fp:
         return tomllib.load(fp)
 
-def _parse_bool(value: object, field: str) -> bool:
+def _parse_bool(d: dict[str, object], key: str, default: bool) -> bool:
+    value = d.get(key, default)
     if isinstance(value, bool):
         return value
-    raise ValueError(f"'{field}' must be a boolean (true/false without quotes), got {type(value).__name__}")
+    raise ValueError(f"'{key}' must be a boolean (true/false without quotes), got {type(value).__name__}")
 
 def parse_config(data: dict[str, object]) -> Config:
     return Config(
@@ -62,7 +59,7 @@ def parse_config(data: dict[str, object]) -> Config:
         cli_version=str(data.get("cli-version", "latest")),
         patches_source=str(data.get("patches-source", "github:MorpheApp/morphe-patches")),
         cli_source=str(data.get("cli-source", "github:MorpheApp/morphe-cli")),
-        strict_sigcheck=_parse_bool(data.get("strict-sigcheck", True), "strict-sigcheck"),
+        strict_sigcheck=_parse_bool(data, "strict-sigcheck", True),
     )
 
 def parse_app_entries(data: dict[str, object], main: Config) -> list[AppEntry]:
@@ -97,12 +94,12 @@ def parse_app_entries(data: dict[str, object], main: Config) -> list[AppEntry]:
             patcher_args=shlex.split(str(t.get("patcher-args", ""))),
             included_patches=shlex.split(inc_raw),
             excluded_patches=shlex.split(exc_raw),
-            exclusive_patches=_parse_bool(t.get("exclusive-patches", False), "exclusive-patches"),
+            exclusive_patches=_parse_bool(t, "exclusive-patches", False),
             patches_source=str(t.get("patches-source", main.patches_source)),
             cli_source=str(t.get("cli-source", main.cli_source)),
             patches_version=str(t.get("patches-version", main.patches_version)),
             cli_version=str(t.get("cli-version", main.cli_version)),
-            skip_sigcheck=_parse_bool(t.get("skip-sigcheck", False), "skip-sigcheck"),
-            enabled=_parse_bool(t.get("enabled", True), "enabled"),
+            skip_sigcheck=_parse_bool(t, "skip-sigcheck", False),
+            enabled=_parse_bool(t, "enabled", True),
         ))
     return entries

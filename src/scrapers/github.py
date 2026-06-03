@@ -75,6 +75,6 @@ class GitHubScraper(BaseScraper):
             raise GitHubReleasesError(f"No matching variant found for arch '{arch}'")
 
         is_bundle = asset["name"].endswith(".apkm")
-        out_path = dest.with_name(f"{dest.name}{'.apkm' if is_bundle else ''}")
+        out_path = dest.with_suffix(".apkm") if is_bundle else dest
         self.net.download(asset["browser_download_url"], out_path, headers=self.net._gh_headers | {"Accept": "application/octet-stream"})
         return DownloadResult(path=out_path, is_bundle=is_bundle)

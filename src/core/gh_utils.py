@@ -27,7 +27,7 @@ def get_matrix(source: str) -> None:
     print(json.dumps({"include": include}, ensure_ascii=False))
 
 def check_builds_needed() -> None:
-    repo = os.environ.get("GITHUB_REPOSITORY", "")
+    repo = os.getenv("GITHUB_REPOSITORY")
     if not repo:
         abort("GITHUB_REPOSITORY environment variable is not set")
 
@@ -116,7 +116,6 @@ def combine_logs(logs_dir: Path | str) -> None:
     green_lines: list[str] = []
     collected: list[str] = []
     microg_line = ""
-
     for log in logs:
         m_line = _parse_log_file(log, green_lines, collected)
         if not microg_line:

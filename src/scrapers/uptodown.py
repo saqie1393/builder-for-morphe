@@ -56,7 +56,7 @@ class UptodownScraper(BaseScraper):
             soup_ver = _parse_html(resp)
 
         dl_url = soup_ver.select_one("#detail-download-button")["data-url"]
-        out_path = dest.with_name(f"{dest.name}{'.apkm' if is_bundle else ''}")
+        out_path = dest.with_suffix(".apkm") if is_bundle else dest
         self.net.download(f"https://dw.uptodown.com/dwn/{dl_url}", out_path)
         return DownloadResult(path=out_path, is_bundle=is_bundle)
 
