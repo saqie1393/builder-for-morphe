@@ -26,24 +26,23 @@ patcher-args = "-e 'Custom branding name for Reddit' -OappName='Morphe Reddit'"
 "github:MorpheApp/morphe-patches" = []
 
 [X]
-# uptodown-dlurl = "https://twitter.en.uptodown.com/android"
-# apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
-github-dlurl = "https://github.com/krvstek/uni-storage/releases/tag/x-twitter"
+uptodown-dlurl = "https://twitter.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 brand = "Piko"
-skip-sigcheck = true
 
 [X.patches]
 "github:crimera/piko" = ["Browse tweet object", "Dynamic color"]
+"gitlab:inotia00/piko-shim" = []
 
 [Twitter]
-# uptodown-dlurl = "https://twitter.en.uptodown.com/android"
-# apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
+uptodown-dlurl = "https://twitter.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 github-dlurl = "https://github.com/krvstek/uni-storage/releases/tag/x-twitter"
 brand = "Piko"
-skip-sigcheck = true
 
 [Twitter.patches]
 "github:crimera/piko" = ["Bring back twitter", "Browse tweet object", "Dynamic color"]
+"gitlab:inotia00/piko-shim" = []
 
 [Instagram]
 # uptodown-dlurl = "https://instagram.en.uptodown.com/android"
