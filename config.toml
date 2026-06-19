@@ -11,28 +11,23 @@ strict-sigcheck = false
 [YouTube]
 enabled = true                          
 app-name = "YouTube"
-brand = "ReVanced Extended"
+brand = "ReVanced-Extended"
 arch = "all"
 version = "auto"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
-
-
-[YouTube.patches]
-"github:anddea/revanced-patches" = {
-    version = "dev",
-    include = ["Custom header for YouTube"],
-    exclude = ["Custom branding name for YouTube"]
-    patcher-args = """
+patcher-args = """
     -e 'MaterialYou' \
     -e 'Return YouTube Username' \
     -e 'Custom branding icon for YouTube' -OappIcon='mmt_turquoise' -OchangeSplashIcon='true' -OrestoreOldSplashAnimation='true' \
-    -e 'Visual preferences icons for YouTube' -OsettingsMenuIcon='yt_alt' -OapplyToAll='true' \
     -e 'Custom header for YouTube' -OcustomHeader='custom_branding_icon' \
     -e 'Theme' -OdarkThemeBackgroundColor=@android:color/black \
     -e 'Settings for YouTube' -OrvxSettingsLabel='Revanced Extended' -OinsertPosition=@string/about_key
     """
-}
+
+[YouTube.patches]
+"github:anddea/revanced-patches" = { version = "dev", include = ["Custom header for YouTube"], exclude = ["Custom branding name for YouTube", "Visual preferences icons for YouTube"] }
+
 
 [YouTube-Stable]
 enabled = false
