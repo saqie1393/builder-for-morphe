@@ -136,6 +136,7 @@ version = "auto"
 
 
 [X-Twitter.patches]
+"github:crimera/piko" = []
 "gitlab:inotia00/x-shim" = []
 
 [Instagram]
