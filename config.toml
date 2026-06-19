@@ -58,7 +58,7 @@ changelog-keywords = ["Solid Explorer"]
 "github:hoo-dles/morphe-patches" = []
 
 [CamScanner]
-enabled = true
+enabled = false
 brand = "hoo-dles"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/intsig-information-co-ltd/camscanner-phone-pdf-creator/"
 uptodown-dlurl = "https://camscanner.en.uptodown.com/android"
@@ -68,7 +68,7 @@ changelog-keywords = ["CamScanner"]
 "github:hoo-dles/morphe-patches" = []
 
 [Telegram]
-enabled = true
+enabled = false
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram-web-version/"
 uptodown-dlurl = "https://telegram.en.uptodown.com/android"
@@ -78,7 +78,7 @@ changelog-keywords = ["Telegram"]
 "gitlab:Paresh-Maheshwari/paresh-patches" = []
 
 [Truecaller]
-enabled = true
+enabled = false
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/true-software-scandinavia-ab/truecaller-caller-id-block/"
 uptodown-dlurl = "https://truecaller.en.uptodown.com/android"
@@ -138,7 +138,7 @@ uptodown-dlurl = "https://twitter.en.uptodown.com/android"
 
 
 [Instagram]
-enabled = false
+enabled = true
 brand = "piko"
 github-dlurl = "https://github.com/krvstek/uni-storage/releases/tag/instagram"
 # apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
