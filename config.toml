@@ -9,7 +9,7 @@ strict-sigcheck = false
 # YouTube - ReVanced Extended (anddea patches)
 # ============================================
 [YouTube]
-enabled = true                          
+enabled = false                         
 app-name = "YouTube"
 brand = "ReVanced-Extended"
 arch = "all"
@@ -56,6 +56,36 @@ changelog-keywords = ["Solid Explorer"]
 
 [Solid-Explorer.patches]
 "github:hoo-dles/morphe-patches" = []
+
+[CamScanner]
+enabled = true
+brand = "hoo-dles"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/intsig-information-co-ltd/camscanner-phone-pdf-creator/"
+uptodown-dlurl = "https://camscanner.en.uptodown.com/android"
+changelog-keywords = ["CamScanner"]
+
+[CamScanner.patches]
+"github:hoo-dles/morphe-patches" = []
+
+[Telegram]
+enabled = true
+brand = "paresh"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram-web-version/"
+uptodown-dlurl = "https://telegram.en.uptodown.com/android"
+changelog-keywords = ["Telegram"]
+
+[Telegram.patches]
+"gitlab:Paresh-Maheshwari/paresh-patches" = []
+
+[Truecaller]
+enabled = true
+brand = "paresh"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/true-software-scandinavia-ab/truecaller-caller-id-block/"
+uptodown-dlurl = "https://truecaller.en.uptodown.com/android"
+changelog-keywords = ["Truecaller"]
+
+[Truecaller.patches]
+"gitlab:Paresh-Maheshwari/paresh-patches" = []
 
 [WPS-Office]
 enabled = false
