@@ -128,7 +128,7 @@ changelog-keywords = ["Fing"]
 "gitlab:Paresh-Maheshwari/paresh-patches" = []
 
 [X-Twitter]
-enabled = false
+enabled = true
 brand = "piko"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
@@ -138,7 +138,7 @@ uptodown-dlurl = "https://twitter.en.uptodown.com/android"
 
 
 [Instagram]
-enabled = true
+enabled = false
 brand = "piko"
 github-dlurl = "https://github.com/krvstek/uni-storage/releases/tag/instagram"
 # apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
