@@ -132,13 +132,11 @@ enabled = true
 brand = "piko"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
-version = "11.99.0-release.1"
-arch = "arm64-v8a"
-riplib = true
+version = "auto"
+
 
 [X-Twitter.patches]
-"github:crimera/piko" = []
-
+"gitlab:inotia00/x-shim" = []
 
 [Instagram]
 enabled = false
