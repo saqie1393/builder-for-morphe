@@ -1,8 +1,60 @@
+# ============================================
+# Global Settings
+# ============================================
+
 strict-sigcheck = false
 
+# ============================================
+# YouTube - ReVanced Extended (anddea patches)
+# ============================================
+[YouTube]
+enabled = true
+app-name = "YouTube"
+brand = "ReVanced Extended"
+arch = "all"
+version = "auto"
+uptodown-dlurl = "https://youtube.en.uptodown.com/android"
+# apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
+patcher-args = """
+    -e 'MaterialYou' \
+    -e 'Return YouTube Username' \
+    -e 'Custom branding icon for YouTube' -OappIcon='mmt_turquoise' -OchangeSplashIcon='true' -OrestoreOldSplashAnimation='true' \
+    -e 'Visual preferences icons for YouTube' -OsettingsMenuIcon='yt_alt' -OapplyToAll='true' \
+    -e 'Custom header for YouTube' -OcustomHeader='custom_branding_icon' \
+    -e 'Theme' -OdarkThemeBackgroundColor=@android:color/black \
+    -e 'Settings for YouTube' -OrvxSettingsLabel='Revanced Extended' -OinsertPosition=@string/about_key
+    """
+
+[YouTube.patches]
+"github:anddea/revanced-patches" = {
+    version = "dev",
+    include = ["Custom header for YouTube"],
+    exclude = ["Custom branding name for YouTube"]
+}
+
+# ============================================
+# Music-Extended - YT Music
+# ============================================
+[Music-Extended]
+enabled = true
+app-name = "YT Music"
+brand = "Morphe"
+arch = "all"
+version = "auto"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
+patcher-args = """
+    -e 'Custom branding name for YouTube Music' -OappNameNotification='YT Music' -OappNameLauncher='YT Music' \
+    -e 'Custom branding icon for YouTube Music' -OappIcon='mmt' -OchangeSplashIcon='true' -OrestoreOldSplashAnimation='true' \
+    -e 'Custom header for YouTube Music' -OcustomHeader='custom_branding_icon' \
+    -e 'Visual preferences icons for YouTube Music' -OsettingsMenuIcon='gear' \
+    -e 'Settings for YouTube Music' -OsettingsLabel='YT Premium'
+    """
+
+[Music-Extended.patches]
+"github:anddea/revanced-patches" = { version = "dev" }
 
 [X-Twitter]
-enabled = true
+enabled = false
 brand = "piko"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
