@@ -132,6 +132,7 @@ enabled = true
 brand = "piko"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
+version = "11.99.0-release.1"
 
 [X-Twitter.patches]
 "github:crimera/piko" = { version = "dev" }
