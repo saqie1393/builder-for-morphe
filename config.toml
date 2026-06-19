@@ -9,13 +9,13 @@ strict-sigcheck = false
 # YouTube - ReVanced Extended (anddea patches)
 # ============================================
 [YouTube]
-enabled = true
+enabled = true                          
 app-name = "YouTube"
 brand = "ReVanced Extended"
 arch = "all"
 version = "auto"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
+# apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
 patcher-args = """
     -e 'MaterialYou' \
     -e 'Return YouTube Username' \
@@ -32,7 +32,6 @@ patcher-args = """
     include = ["Custom header for YouTube"],
     exclude = ["Custom branding name for YouTube"]
 }
-
 
 [YouTube-Stable]
 enabled = false
