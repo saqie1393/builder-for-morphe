@@ -4,54 +4,73 @@
 
 strict-sigcheck = false
 
-# ============================================
-# YouTube - ReVanced Extended (anddea patches)
-# ============================================
-[YouTube]
+[YouTube-Stable]
 enabled = true
-app-name = "YouTube"
-brand = "ReVanced Extended"
-arch = "all"
-version = "auto"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-# apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
-patcher-args = """
-    -e 'MaterialYou' \
-    -e 'Return YouTube Username' \
-    -e 'Custom branding icon for YouTube' -OappIcon='mmt_turquoise' -OchangeSplashIcon='true' -OrestoreOldSplashAnimation='true' \
-    -e 'Visual preferences icons for YouTube' -OsettingsMenuIcon='yt_alt' -OapplyToAll='true' \
-    -e 'Custom header for YouTube' -OcustomHeader='custom_branding_icon' \
-    -e 'Theme' -OdarkThemeBackgroundColor=@android:color/black \
-    -e 'Settings for YouTube' -OrvxSettingsLabel='Revanced Extended' -OinsertPosition=@string/about_key
-    """
 
-[YouTube.patches]
-"github:anddea/revanced-patches" = {
-    version = "dev",
-    include = ["Custom header for YouTube"],
-    exclude = ["Custom branding name for YouTube"]
-}
+[YouTube-Stable.patches]
+"github:MorpheApp/morphe-patches" = []
 
-# ============================================
-# Music-Extended - YT Music
-# ============================================
-[Music-Extended]
+[YT-Music-Stable]
 enabled = true
-app-name = "YT Music"
-brand = "Morphe"
-arch = "all"
-version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-patcher-args = """
-    -e 'Custom branding name for YouTube Music' -OappNameNotification='YT Music' -OappNameLauncher='YT Music' \
-    -e 'Custom branding icon for YouTube Music' -OappIcon='mmt' -OchangeSplashIcon='true' -OrestoreOldSplashAnimation='true' \
-    -e 'Custom header for YouTube Music' -OcustomHeader='custom_branding_icon' \
-    -e 'Visual preferences icons for YouTube Music' -OsettingsMenuIcon='gear' \
-    -e 'Settings for YouTube Music' -OsettingsLabel='YT Premium'
-    """
+uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
+arch = "both"
 
-[Music-Extended.patches]
-"github:anddea/revanced-patches" = { version = "dev" }
+[YT-Music-Stable.patches]
+"github:MorpheApp/morphe-patches" = []
+
+
+[Solid-Explorer]
+enabled = true
+brand = "hoo-dles"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/neatbytes/solid-explorer-file-manager/"
+uptodown-dlurl = "https://solid-explorer-file-manager.en.uptodown.com/android"
+changelog-keywords = ["Solid Explorer"]
+
+[Solid-Explorer.patches]
+"github:hoo-dles/morphe-patches" = []
+
+[WPS-Office]
+enabled = true
+brand = "hoo-dles"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/wps-software-pte-ltd/wps-office-pdf/"
+uptodown-dlurl = "https://wps-office.en.uptodown.com/android"
+changelog-keywords = ["WPS Office"]
+
+[WPS-Office.patches]
+"github:hoo-dles/morphe-patches" = []
+
+[CREX]
+enabled=true
+brand = "paresh"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/cricket-exchange/cricket-exchange-live-score-analysis/"
+uptodown-dlurl = "https://live-line-and-cricket-scores-cricket-exchange.en.uptodown.com/android"
+changelog-keywords = ["CREX"]
+
+[CREX.patches]
+"gitlab:Paresh-Maheshwari/paresh-patches" = []
+
+[Cricbuzz]
+enabled = true
+brand = "paresh"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/cricbuzz-com/cricbuzz-live-cricket-scores-news/"
+uptodown-dlurl = "https://cricbuzz-cricket-scores-and-news.en.uptodown.com/android"
+changelog-keywords = ["Cricbuzz"]
+
+[Cricbuzz.patches]
+"gitlab:Paresh-Maheshwari/paresh-patches" = []
+
+[Fing]
+enabled= true
+brand = "paresh"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/fing-limited/fing-network-tools/"
+uptodown-dlurl = "https://fing-network-tools.en.uptodown.com/android"
+changelog-keywords = ["Fing"]
+
+[Fing.patches]
+"gitlab:Paresh-Maheshwari/paresh-patches" = []
 
 [X-Twitter]
 enabled = false
