@@ -25,7 +25,7 @@ uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
 [YouTube-Experimental]
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-version = "21.24.360"
+version = "21.25.523"
 patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom branding' -OcustomIcon=icons/YouTube/branding -OcustomName='YouTube Morphe'"
 
 [YouTube-Experimental.patches]
@@ -35,7 +35,7 @@ patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom bran
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 arch = "both"
-version = "9.22.53"
+version = "9.24.51"
 patcher-args = "-e 'Change header' -Ocustom=icons/Music/header -e 'Custom branding' -OcustomIcon=icons/Music/branding -OcustomName='Music Morphe'"
 
 [YT-Music-Experimental.patches]
@@ -44,7 +44,7 @@ patcher-args = "-e 'Change header' -Ocustom=icons/Music/header -e 'Custom brandi
 [Reddit-Experimental]
 apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit"
 uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
-version = "2026.23.0"
+version = "2026.25.0"
 patcher-args = "-e 'Custom branding name for Reddit' -OappName='Reddit Morphe'"
 
 [Reddit-Experimental.patches]
@@ -319,7 +319,7 @@ changelog-keywords = ["FotMob"]
 brand = "hoo-dles"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/hellochinese-learn-chinese-mandarin/hellochinese-learn-chinese/"
 uptodown-dlurl = "https://hellochinese.en.uptodown.com/android"
-changelog-keywords = ["HelloChinese"]
+changelog-keywords = ["Chinese"]
 
 [HelloChinese.patches]
 "github:hoo-dles/morphe-patches" = []
@@ -327,7 +327,7 @@ changelog-keywords = ["HelloChinese"]
 [ibis-Paint-X]
 brand = "hoo-dles"
 uptodown-dlurl = "https://ibispaint-x.en.uptodown.com/android"
-changelog-keywords = ["Ibis Paint"]
+changelog-keywords = ["Ibis", "Paint"]
 
 [ibis-Paint-X.patches]
 "github:hoo-dles/morphe-patches" = []
@@ -408,7 +408,7 @@ changelog-keywords = ["Prime Video"]
 brand = "hoo-dles"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/urbandroid-team/sleep-as-android-sleep-cycle-tracker-smart-alarm/"
 uptodown-dlurl = "https://sleep-as-android.en.uptodown.com/android"
-changelog-keywords = ["Sleep as Android"]
+changelog-keywords = ["Sleep"]
 
 [Sleep-as-Android.patches]
 "github:hoo-dles/morphe-patches" = []
@@ -471,7 +471,7 @@ changelog-keywords = ["Windy"]
 brand = "hoo-dles"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/wps-software-pte-ltd/wps-office-pdf/"
 uptodown-dlurl = "https://wps-office.en.uptodown.com/android"
-changelog-keywords = ["WPS Office"]
+changelog-keywords = ["WPS"]
 
 [WPS-Office.patches]
 "github:hoo-dles/morphe-patches" = []
