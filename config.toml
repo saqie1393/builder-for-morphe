@@ -9,7 +9,7 @@ strict-sigcheck = false
 # YouTube - ReVanced Extended (anddea patches)
 # ============================================
 [YouTube]
-enabled = true                        
+enabled = false                       
 app-name = "YouTube"
 brand = "ReVanced-Extended"
 arch = "all"
@@ -30,7 +30,7 @@ patcher-args = """
 
 
 [YouTube-Stable]
-enabled = true
+enabled = false
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 
@@ -38,7 +38,7 @@ uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 "github:MorpheApp/morphe-patches" = { version = "dev" }
 
 [YT-Music-Stable]
-enabled = true
+enabled = false
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 arch = "both"
@@ -132,7 +132,7 @@ enabled = true
 brand = "piko"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
-version = "auto"
+version = "12.0.0-release.0"
 
 
 [X-Twitter.patches]
@@ -140,7 +140,7 @@ version = "auto"
 "gitlab:inotia00/x-shim" = { version = "dev" }
 
 [Instagram]
-enabled = true
+enabled = false
 brand = "piko"
 github-dlurl = "https://github.com/krvstek/uni-storage/releases/tag/instagram"
 # apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
