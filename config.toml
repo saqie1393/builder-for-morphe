@@ -128,7 +128,7 @@ changelog-keywords = ["Fing"]
 "gitlab:Paresh-Maheshwari/paresh-patches" = []
 
 [X-Twitter]
-enabled = true
+enabled = false
 brand = "piko"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
@@ -160,3 +160,12 @@ changelog-keywords = ["Nova Launcher"]
 
 [Nova-Launcher.patches]
 "github:hoo-dles/morphe-patches" = []
+
+[TikTok]
+enabled = true
+brand = "de-vanced"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
+uptodown-dlurl = "https://tiktok.en.uptodown.com/android"
+
+[TikTok.patches]
+"github:RookieEnough/De-Vanced" = []
