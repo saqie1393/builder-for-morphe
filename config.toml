@@ -166,6 +166,6 @@ enabled = true
 brand = "de-vanced"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
 uptodown-dlurl = "https://tiktok.en.uptodown.com/android"
-
+version = "43.6.2"
 [TikTok.patches]
 "github:RookieEnough/De-Vanced" = []
