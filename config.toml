@@ -143,10 +143,10 @@ version = "12.0.0-release.0"
 enabled = true
 brand = "piko"
 github-dlurl = "https://github.com/krvstek/uni-storage/releases/tag/instagram"
-# apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
-# uptodown-dlurl = "https://instagram.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
+uptodown-dlurl = "https://instagram.en.uptodown.com/android"
 arch = "arm64-v8a"
-
+version = "435.0.0.37.76"
 
 [Instagram.patches]
 "github:crimera/piko" = { version = "dev" }
