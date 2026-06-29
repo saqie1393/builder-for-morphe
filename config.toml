@@ -9,7 +9,7 @@ strict-sigcheck = false
 # YouTube - ReVanced Extended (anddea patches)
 # ============================================
 [YouTube]
-enabled = false                       
+enabled = true                     
 app-name = "YouTube"
 brand = "ReVanced-Extended"
 arch = "all"
