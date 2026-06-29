@@ -9,7 +9,7 @@ strict-sigcheck = false
 # YouTube - ReVanced Extended (anddea patches)
 # ============================================
 [YouTube]
-enabled = true                     
+enabled = false                   
 app-name = "YouTube"
 brand = "ReVanced-Extended"
 arch = "all"
@@ -132,7 +132,7 @@ enabled = true
 brand = "piko"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
-version = "auto"
+version = "12.2.0-release.0"
 
 
 [X-Twitter.patches]
@@ -140,7 +140,7 @@ version = "auto"
 "gitlab:inotia00/x-shim" = { version = "dev" }
 
 [Instagram]
-enabled = true
+enabled = false
 brand = "piko"
 github-dlurl = "https://github.com/krvstek/uni-storage/releases/tag/instagram"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
@@ -162,7 +162,7 @@ changelog-keywords = ["Nova Launcher"]
 "github:hoo-dles/morphe-patches" = []
 
 [TikTok]
-enabled = true
+enabled = false
 brand = "de-vanced"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
 uptodown-dlurl = "https://tiktok.en.uptodown.com/android"
