@@ -67,7 +67,7 @@ uptodown-dlurl = "https://twitter.en.uptodown.com/android"
 
 [X-Twitter.patches]
 "github:crimera/piko" = ["Browse tweet object", "Dynamic color"]
-"gitlab:inotia00/x-shim" = []
+"gitlab:inotia00/x-shim" = { version = "dev" }
 
 [Instagram]
 enabled = true
@@ -78,7 +78,7 @@ github-dlurl = "https://github.com/krvstek/uni-storage/releases/tag/instagram"
 arch = "arm64-v8a"
 
 [Instagram.patches]
-"github:crimera/piko" = []
+"github:crimera/piko" = { version = "dev" }
 
 [AdGuard_hoo-dles]
 enabled = false
