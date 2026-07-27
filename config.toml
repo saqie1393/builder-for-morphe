@@ -447,7 +447,7 @@ changelog-keywords = ["Proton VPN"]
 "gitlab:Paresh-Maheshwari/paresh-patches" = []
 
 [Telegram]
-enabled = false
+enabled = true
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram-web-version/"
 uptodown-dlurl = "https://telegram.en.uptodown.com/android"
