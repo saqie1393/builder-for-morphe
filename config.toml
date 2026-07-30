@@ -15,9 +15,11 @@ parallel-jobs = 4
 enabled = true
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
+version = "auto"
+patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom branding' -OcustomIcon=icons/YouTube/branding -OcustomName='YouTube Morphe'"
 
-[YouTube.patches]
-"github:MorpheApp/morphe-patches" = []
+[YouTube-Experimental.patches]
+"github:MorpheApp/morphe-patches" = { version = "dev" }
 
 # ==========================================
 # YT-MUSIC (MorpheApp patches)
@@ -34,43 +36,27 @@ arch = "all"  # "both" ki jagah "all" recommended
 # ==========================================
 # YOUTUBE - anddea patches
 # ==========================================
-[YouTube_anddea]
-enabled = true
-brand = "anddea"
+[YouTube]
+enabled = true                          
 app-name = "YouTube"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
-uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-
-[YouTube_anddea.patches]
-"github:anddea/revanced-patches" = { exclude = ["Visual preferences icons for YouTube"] }
-
-# ==========================================
-# YT-MUSIC - anddea patches
-# ==========================================
-[YT-Music_anddea]
-enabled = true
-brand = "anddea"
-app-name = "YT Music"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
+brand = "ReVanced-Extended"
 arch = "all"
-
-[YT-Music_anddea.patches]
-"github:anddea/revanced-patches" = { exclude = ["Visual preferences icons for YouTube Music"] }
-
-# ==========================================
-# YOUTUBE - Experimental (MorpheApp dev)
-# ==========================================
-[YouTube-Experimental]
-enabled = true
-brand = "morphe-dev"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
+version = "auto"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-version = "21.26.360"
-patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom branding' -OcustomIcon=icons/YouTube/branding -OcustomName='YouTube Morphe'"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
+patcher-args = """
+    -e 'MaterialYou' \
+    -e 'Return YouTube Username' \
+    -e 'Custom branding icon for YouTube' -OappIcon='mmt_turquoise' -OchangeSplashIcon='true' -OrestoreOldSplashAnimation='true' \
+    -e 'Custom header for YouTube' -OcustomHeader='custom_branding_icon' \
+    -e 'Theme' -OdarkThemeBackgroundColor=@android:color/black \
+    -e 'Settings for YouTube' -OrvxSettingsLabel='Revanced Extended' -OinsertPosition=@string/about_key
+    """
 
-[YouTube-Experimental.patches]
-"github:MorpheApp/morphe-patches" = { version = "dev" }
+[YouTube.patches]
+"github:anddea/revanced-patches" = { version = "dev", include = ["Custom header for YouTube"], exclude = ["Custom branding name for YouTube", "Visual preferences icons for YouTube"] }
+
+
 
 # ==========================================
 # X-TWITTER (Piko + x-shim)
@@ -122,27 +108,7 @@ uptodown-dlurl = "https://truecaller.en.uptodown.com/android"
 [Truecaller.patches]
 "gitlab:Paresh-Maheshwari/paresh-patches" = []
 
-# ==========================================
-# BAQI SAB APPS (DISABLED)
-# ==========================================
-[Reddit]
-enabled = false
-apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit"
-uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
 
-[Reddit.patches]
-"github:MorpheApp/morphe-patches" = []
-
-[YouTube-Music-Experimental]
-enabled = false
-brand = "morphe-dev"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
-arch = "both"
-version = "9.26.51"
-patcher-args = "-e 'Change header' -Ocustom=icons/Music/header -e 'Custom branding' -OcustomIcon=icons/Music/branding -OcustomName='Music Morphe'"
-
-[YouTube-Music-Experimental.patches]
 "github:MorpheApp/morphe-patches" = { version = "dev" }
 
 # ... (baqi sab apps yahan disabled hain, aap unhe same rakhein)
