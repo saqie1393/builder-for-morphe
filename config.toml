@@ -9,35 +9,41 @@ cli-version = "latest"
 parallel-jobs = 4
 
 # ==========================================
-# YOUTUBE (MorpheApp patches)
+# YOUTUBE - MorpheApp patches
 # ==========================================
-[YouTube]
+[YouTube-Morphe]                          # <-- NAME CHANGE
 enabled = true
+app-name = "YouTube"
+brand = "Morphe"
+arch = "all"
+version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-version = "auto"
 patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom branding' -OcustomIcon=icons/YouTube/branding -OcustomName='YouTube Morphe'"
 
-[YouTube-Experimental.patches]
+[YouTube-Morphe.patches]                  # <-- NAME CHANGE
 "github:MorpheApp/morphe-patches" = { version = "dev" }
 
 # ==========================================
-# YT-MUSIC (MorpheApp patches)
+# YT-MUSIC - MorpheApp patches
 # ==========================================
 [YT-Music]
 enabled = true
+app-name = "YT Music"
+brand = "Morphe"
+arch = "all"
+version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
-arch = "all"  # "both" ki jagah "all" recommended
 
 [YT-Music.patches]
 "github:MorpheApp/morphe-patches" = []
 
 # ==========================================
-# YOUTUBE - anddea patches
+# YOUTUBE - anddea patches (ReVanced Extended)
 # ==========================================
-[YouTube]
-enabled = true                          
+[YouTube-anddea]                          # <-- NAME CHANGE
+enabled = true
 app-name = "YouTube"
 brand = "ReVanced-Extended"
 arch = "all"
@@ -53,10 +59,8 @@ patcher-args = """
     -e 'Settings for YouTube' -OrvxSettingsLabel='Revanced Extended' -OinsertPosition=@string/about_key
     """
 
-[YouTube.patches]
+[YouTube-anddea.patches]                  # <-- NAME CHANGE
 "github:anddea/revanced-patches" = { version = "dev", include = ["Custom header for YouTube"], exclude = ["Custom branding name for YouTube", "Visual preferences icons for YouTube"] }
-
-
 
 # ==========================================
 # X-TWITTER (Piko + x-shim)
