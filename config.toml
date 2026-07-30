@@ -107,8 +107,3 @@ uptodown-dlurl = "https://truecaller.en.uptodown.com/android"
 
 [Truecaller.patches]
 "gitlab:Paresh-Maheshwari/paresh-patches" = []
-
-
-"github:MorpheApp/morphe-patches" = { version = "dev" }
-
-# ... (baqi sab apps yahan disabled hain, aap unhe same rakhein)
