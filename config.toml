@@ -12,7 +12,7 @@ parallel-jobs = 4
 # YOUTUBE - MorpheApp patches
 # ==========================================
 [YouTube-Morphe]                          # <-- NAME CHANGE
-enabled = true
+enabled = false
 app-name = "YouTube"
 brand = "Morphe"
 arch = "all"
@@ -43,7 +43,7 @@ uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 # YOUTUBE - anddea patches (ReVanced Extended)
 # ==========================================
 [YouTube-anddea]                          # <-- NAME CHANGE
-enabled = true
+enabled = false
 app-name = "YouTube"
 brand = "ReVanced-Extended"
 arch = "all"
@@ -66,7 +66,7 @@ patcher-args = """
 # X-TWITTER (Piko + x-shim)
 # ==========================================
 [X-Twitter]
-enabled = true
+enabled = false
 brand = "piko"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
@@ -94,7 +94,7 @@ version = "435.0.0.37.76"
 # TELEGRAM (Paresh patches)
 # ==========================================
 [Telegram]
-enabled = true
+enabled = false
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram-web-version/"
 uptodown-dlurl = "https://telegram.en.uptodown.com/android"
@@ -106,10 +106,78 @@ uptodown-dlurl = "https://telegram.en.uptodown.com/android"
 # TRUECALLER (Paresh patches)
 # ==========================================
 [Truecaller]
-enabled = true
+enabled = false
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/true-software-scandinavia-ab/truecaller-caller-id-block/"
 uptodown-dlurl = "https://truecaller.en.uptodown.com/android"
 
 [Truecaller.patches]
 "gitlab:Paresh-Maheshwari/paresh-patches" = []
+
+
+# 1.1.1.1 - Cloudflare DNS
+["1.1.1.1"]
+enabled = true
+brand = "rushi"
+app-name = "1.1.1.1"
+uptodown-dlurl = "https://1-1-1-1.en.uptodown.com/android"
+version = "auto"
+
+["1.1.1.1".patches]
+"github:rushiranpise/morphe-patches" = []
+
+# AiScore - Sports Scores
+[AiScore]
+enabled = true
+brand = "rushi"
+app-name = "AiScore"
+uptodown-dlurl = "https://aiscore.en.uptodown.com/android"
+version = "auto"
+
+[AiScore.patches]
+"github:rushiranpise/morphe-patches" = []
+
+# Ampere - Battery Charging Info
+[Ampere]
+enabled = true
+brand = "rushi"
+app-name = "Ampere"
+uptodown-dlurl = "https://ampere.en.uptodown.com/android"
+version = "auto"
+
+[Ampere.patches]
+"github:rushiranpise/morphe-patches" = []
+
+# APKMirror Installer
+[APKMirror-Installer]
+enabled = true
+brand = "rushi"
+app-name = "APKMirror Installer"
+uptodown-dlurl = "https://apkmirror-installer.en.uptodown.com/android"
+version = "auto"
+
+[APKMirror-Installer.patches]
+"github:rushiranpise/morphe-patches" = []
+
+# ES File Explorer
+[ES-File-Explorer]
+enabled = true
+brand = "rushi"
+app-name = "ES File Explorer"
+uptodown-dlurl = "https://es-file-explorer.en.uptodown.com/android"
+version = "auto"
+
+[ES-File-Explorer.patches]
+"github:rushiranpise/morphe-patches" = []
+
+# Speedtest by Ookla
+[Speedtest]
+enabled = true
+brand = "rushi"
+app-name = "Speedtest"
+uptodown-dlurl = "https://speedtest-net-mobile.en.uptodown.com/android"
+arch = "both"
+version = "auto"
+
+[Speedtest.patches]
+"github:rushiranpise/morphe-patches" = []
