@@ -94,7 +94,7 @@ version = "auto"
 # TELEGRAM (Paresh patches)
 # ==========================================
 [Telegram]
-enabled = true
+enabled = false
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram-web-version/"
 uptodown-dlurl = "https://telegram.en.uptodown.com/android"
