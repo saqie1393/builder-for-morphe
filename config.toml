@@ -1,14 +1,6 @@
 strict-sigcheck = false
 
 # ==========================================
-# GLOBAL SETTINGS
-# ==========================================
-brand = "Morphe"
-cli-source = "github:MorpheApp/morphe-cli"
-cli-version = "latest"
-parallel-jobs = 4
-
-# ==========================================
 # YOUTUBE - MorpheApp patches
 # ==========================================
 [YouTube-Morphe]                          # <-- NAME CHANGE
