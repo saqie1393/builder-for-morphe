@@ -19,17 +19,18 @@ patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom bran
 # ==========================================
 # YT-MUSIC - MorpheApp patches
 # ==========================================
-[YT-Music]
-enabled = true
-app-name = "YT Music"
-brand = "Morphe"
-version = "auto"
+
+[YT-Music-Experimental]
+enabled = false
+brand = "morphe-dev"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
+arch = "both"
+version = "auto"
+patcher-args = "-e 'Change header' -Ocustom=icons/Music/header -e 'Custom branding' -OcustomIcon=icons/Music/branding -OcustomName='Music Morphe'"
 
-[YT-Music.patches]
-"github:MorpheApp/morphe-patches" = []
-
+[YT-Music-Experimental.patches]
+"github:MorpheApp/morphe-patches" = { version = "dev" }
 # ==========================================
 # YOUTUBE - anddea patches (ReVanced Extended)
 # ==========================================
@@ -57,7 +58,7 @@ patcher-args = """
 # X-TWITTER (Piko + x-shim)
 # ==========================================
 [X-Twitter]
-enabled = true
+enabled = false
 brand = "piko"
 version = "12.11.0-release.0"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
