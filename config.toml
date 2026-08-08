@@ -4,7 +4,7 @@ strict-sigcheck = false
 # YOUTUBE - MorpheApp patches
 # ==========================================
 [YouTube-Morphe]                          # <-- NAME CHANGE
-enabled = false
+enabled = true
 app-name = "YouTube"
 brand = "Morphe"
 arch = "all"
@@ -20,7 +20,7 @@ patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom bran
 # YT-MUSIC - MorpheApp patches
 # ==========================================
 [YT-Music]
-enabled = false
+enabled = true
 app-name = "YT Music"
 brand = "Morphe"
 arch = "all"
@@ -35,7 +35,7 @@ uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 # YOUTUBE - anddea patches (ReVanced Extended)
 # ==========================================
 [YouTube-anddea]                          # <-- NAME CHANGE
-enabled = false
+enabled = true
 app-name = "YouTube"
 brand = "ReVanced-Extended"
 arch = "all"
@@ -65,7 +65,7 @@ uptodown-dlurl = "https://twitter.en.uptodown.com/android"
 
 [X-Twitter.patches]
 "github:crimera/piko" = { version = "dev" }
-#"gitlab:inotia00/x-shim" = { version = "dev" }
+"gitlab:inotia00/x-shim" = { version = "dev" }
 
 # ==========================================
 # INSTAGRAM (Piko)
@@ -86,7 +86,7 @@ version = "auto"
 # TELEGRAM (Paresh patches)
 # ==========================================
 [Telegram]
-enabled = false
+enabled = true
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram-web-version/"
 uptodown-dlurl = "https://telegram.en.uptodown.com/android"
