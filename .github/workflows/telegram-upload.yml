@@ -16,9 +16,10 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: ${{ github.repository }}
-          tag: ${{ github.event.release.tag_name }}
+          latest: true  # یہ latest release سے ڈاؤن لوڈ کرے گا
           fileName: "*.apk"
           out-file-path: "./apks"
+        continue-on-error: true  # اگر کوئی ریلیز نہ ہو تو ناکام نہ ہو
 
       - name: Send APKs to Telegram
         uses: cbrgm/telegram-github-action@v1
@@ -28,7 +29,8 @@ jobs:
           message: |
             🚀 **نئی بلڈ ریلیز ہو گئی!**
             ریپوزٹری: ${{ github.repository }}
-            ٹیگ: ${{ github.event.release.tag_name }}
+            ٹیگ: ${{ github.event.release.tag_name || 'Latest Release' }}
           media: |
             ./apks/*.apk
           media-type: "document"
+        continue-on-error: true  # اگر کوئی APK نہ ہو تو ناکام نہ ہو
