@@ -22,15 +22,20 @@ jobs:
         continue-on-error: true
 
       - name: Send APKs to Telegram
-        uses: cbrgm/telegram-github-action@v1
-        with:
-          token: ${{ secrets.TG_TOKEN }}
-          to: ${{ secrets.TG_CHAT }}
-          message: |
-            🚀 **نئی بلڈ ریلیز ہو گئی!**
-            ریپوزٹری: ${{ github.repository }}
-            ٹیگ: ${{ github.event.release.tag_name || 'Latest Release' }}
-          media: |
-            ./apks/*.apk
-          media-type: "document"
-        continue-on-error: true
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT: ${{ secrets.TG_CHAT }}
+        run: |
+          # Check if APKs exist
+          if [ -d "./apks" ] && [ "$(ls -A ./apks/*.apk 2>/dev/null)" ]; then
+            for apk in ./apks/*.apk; do
+              echo "Sending $apk..."
+              curl -s -F "chat_id=$TG_CHAT" \
+                   -F "document=@$apk" \
+                   "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
+                   || echo "Failed to send $apk"
+            done
+            echo "All APKs sent!"
+          else
+            echo "No APKs found to send."
+          fi
