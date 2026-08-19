@@ -205,35 +205,30 @@ jobs:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT: ${{ secrets.TG_CHAT }}
         run: uv run python -m src.scripts.telegram notify '${{ inputs.patch_source }}'
-- name: Send Telegram notification
-  if: steps.check.outputs.has_apks == 'true' && env.TG_TOKEN != '' && env.TG_CHAT != ''
-  env:
-    TG_TOKEN: ${{ secrets.TG_TOKEN }}
-    TG_CHAT: ${{ secrets.TG_CHAT }}
-  run: uv run python -m src.scripts.telegram notify '${{ inputs.patch_source }}'
 
-- name: Upload APKs directly to Telegram
-  if: steps.check.outputs.has_apks == 'true' && env.TG_TOKEN != '' && env.TG_CHAT != ''
-  env:
-    TG_TOKEN: ${{ secrets.TG_TOKEN }}
-    TG_CHAT: ${{ secrets.TG_CHAT }}
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    TAG: ${{ needs.prepare.outputs.version }}
-  run: |
-    # Download APKs from the release
-    gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "*.apk" --dir ./telegram_apks
-    
-    # Send each APK
-    for apk in ./telegram_apks/*.apk; do
-      if [ -f "$apk" ]; then
-        echo "Sending $apk..."
-        curl -s -F "chat_id=$TG_CHAT" \
-             -F "document=@$apk" \
-             "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
-             || echo "Failed to send $apk"
-      fi
-    done
-    echo "All APKs sent to Telegram!"
+      - name: Upload APKs directly to Telegram
+        if: steps.check.outputs.has_apks == 'true' && env.TG_TOKEN != '' && env.TG_CHAT != ''
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT: ${{ secrets.TG_CHAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ needs.prepare.outputs.version }}
+        run: |
+          # Download APKs from the release
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "*.apk" --dir ./telegram_apks
+          
+          # Send each APK
+          for apk in ./telegram_apks/*.apk; do
+            if [ -f "$apk" ]; then
+              echo "Sending $apk..."
+              curl -s -F "chat_id=$TG_CHAT" \
+                   -F "document=@$apk" \
+                   "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
+                   || echo "Failed to send $apk"
+            fi
+          done
+          echo "All APKs sent to Telegram!"
+
       - name: Delete empty draft if no APKs
         if: steps.check.outputs.has_apks != 'true'
         env:
