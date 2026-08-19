@@ -3,8 +3,8 @@ strict-sigcheck = false
 # ==========================================
 # YOUTUBE - MorpheApp patches
 # ==========================================
-[YouTube-Morphe]                          # <-- NAME CHANGE
-enabled = false
+[YouTube-Morphe]                          
+enabled = true
 app-name = "YouTube"
 brand = "Morphe"
 arch = "all"
@@ -13,7 +13,7 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom branding' -OcustomIcon=icons/YouTube/branding -OcustomName='YouTube Morphe'"
 
-[YouTube-Morphe.patches]                  # <-- NAME CHANGE
+[YouTube-Morphe.patches]               
 "github:MorpheApp/morphe-patches" = { version = "dev" }
 
 # ==========================================
@@ -21,7 +21,7 @@ patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom bran
 # ==========================================
 
 [YT-Music-Experimental]
-enabled = false
+enabled = true
 brand = "morphe-dev"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
@@ -35,7 +35,7 @@ patcher-args = "-e 'Change header' -Ocustom=icons/Music/header -e 'Custom brandi
 # YOUTUBE - anddea patches (ReVanced Extended)
 # ==========================================
 [YouTube-anddea]                          # <-- NAME CHANGE
-enabled = false
+enabled = true
 app-name = "YouTube"
 brand = "ReVanced-Extended"
 arch = "all"
@@ -58,7 +58,7 @@ patcher-args = """
 # X-TWITTER (Piko + x-shim)
 # ==========================================
 [X-Twitter]
-enabled = false
+enabled = true
 brand = "piko"
 version = "12.11.0-release.0"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
@@ -88,7 +88,7 @@ patcher-args = "-e 'Theme' -Oamoled=true"
 # TELEGRAM (Paresh patches)
 # ==========================================
 [Telegram]
-enabled = false
+enabled = true
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram-web-version/"
 uptodown-dlurl = "https://telegram.en.uptodown.com/android"
@@ -101,7 +101,7 @@ uptodown-dlurl = "https://telegram.en.uptodown.com/android"
 # TRUECALLER (Paresh patches)
 # ==========================================
 [Truecaller]
-enabled = false
+enabled = true
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/true-software-scandinavia-ab/truecaller-caller-id-block/"
 uptodown-dlurl = "https://truecaller.en.uptodown.com/android"
@@ -112,11 +112,21 @@ uptodown-dlurl = "https://truecaller.en.uptodown.com/android"
 
 # 1.1.1.1 - Cloudflare DNS
 ["1.1.1.1"]
-enabled = false
+enabled = true
 brand = "rushi"
 app-name = "1.1.1.1"
 uptodown-dlurl = "https://1-1-1-1.en.uptodown.com/android"
 version = "auto"
 
 ["1.1.1.1".patches]
+"github:rushiranpise/morphe-patches" = []
+
+[Hola-VPN]
+enabled = true
+brand = "rushi"
+uptodown-dlurl = "https://holavpn.en.uptodown.com/android"
+arch = "arm64-v8a"
+changelog-keywords = ["Hola VPN"]
+
+[Hola-VPN.patches]
 "github:rushiranpise/morphe-patches" = []
