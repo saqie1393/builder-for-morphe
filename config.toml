@@ -4,7 +4,7 @@ strict-sigcheck = false
 # YOUTUBE - MorpheApp patches
 # ==========================================
 [YouTube-Morphe]                          
-enabled = true
+enabled = false
 app-name = "YouTube"
 brand = "Morphe"
 arch = "all"
@@ -21,7 +21,7 @@ patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom bran
 # ==========================================
 
 [YT-Music-Experimental]
-enabled = true
+enabled = false
 brand = "morphe-dev"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
