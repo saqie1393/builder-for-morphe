@@ -70,7 +70,7 @@ For all Morphe resources, patch bundles and community projects, visit [nvbangg/a
 <div align="center">
 
 Maintained with ❤️ by **[@nvbangg](https://github.com/nvbangg)** (syncing upstream from [krvstek/uni-apks](https://github.com/krvstek/uni-apks) with the changes mentioned in the [Features](#features) section)  
-⭐ Star [this repo](https://github.com/nvbangg/builder-for-morphe) if you find it useful!
+⭐ Star [this repository](https://github.com/nvbangg/builder-for-morphe) if you find it useful!
 
 </div>
 
@@ -90,7 +90,5 @@ This project is open-source and distributed under the **[GNU GPLv3](LICENSE)** l
 
 - [This project](https://github.com/nvbangg/builder-for-morphe) is not affiliated with [Morphe](https://morphe.software/) or any authors mentioned here.
 - This project is intended for educational and research purposes only, and is not responsible for any issues arising from its use.
-- All builds are done using publicly available tools. This repository simply automates the process for convenience.
-- This repository does not provide pre-patched APKs. Releases only contain unmodified APKs used for building.
-- Everything happens through public GitHub Actions to ensure security and transparency.
+- This repository does not provide pre-patched APKs; it is only a tool to conveniently use publicly available patch bundles via GitHub Actions to ensure security and transparency.
 </details>
