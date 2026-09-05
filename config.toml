@@ -2,6 +2,31 @@
 
 strict-sigcheck = false
 
+# ==========================================
+# YOUTUBE - anddea patches (ReVanced Extended)
+# ==========================================
+[YouTube-anddea]                          
+enabled = true
+app-name = "YouTube"
+brand = "ReVanced-Extended"
+arch = "all"
+version = "auto"
+uptodown-dlurl = "https://youtube.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
+patcher-args = """
+    -e 'MaterialYou' \
+    -e 'Return YouTube Username' \
+    -e 'Custom branding icon for YouTube' -OappIcon='mmt_turquoise' -OchangeSplashIcon='true' -OrestoreOldSplashAnimation='true' \
+    -e 'Custom header for YouTube' -OcustomHeader='custom_branding_icon' \
+    -e 'Theme' -OdarkThemeBackgroundColor=@android:color/black \
+    -e 'Settings for YouTube' -OrvxSettingsLabel='Revanced Extended' -OinsertPosition=@string/about_key
+    """
+
+
+[YouTube-anddea.patches]               
+"github:anddea/revanced-patches" = { version = "dev", include = ["Custom header for YouTube"], exclude = ["Custom branding name for YouTube", "Visual preferences icons for YouTube"] }
+
+
 [YouTube]
 enabled = false
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
@@ -55,14 +80,18 @@ patcher-args = "-e 'Custom branding name for Reddit' -OappName='Reddit Morphe'"
 [Reddit-Experimental.patches]
 "github:MorpheApp/morphe-patches" = { version = "dev" }
 
+# ==========================================
+# X-TWITTER (Piko + x-shim)
+# ==========================================
 [X-Twitter]
 enabled = true
 brand = "piko"
+version = "12.11.0-release.0"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
 
 [X-Twitter.patches]
-"github:crimera/piko" = ["Browse tweet object", "Dynamic color"]
 "github:crimera/piko" = { version = "dev" }
+"gitlab:inotia00/x-shim" = { version = "dev" }
 
 [Instagram]
 enabled = true
