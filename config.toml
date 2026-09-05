@@ -1,132 +1,236 @@
+# Configuration guide: https://github.com/nvbangg/builder-for-morphe/blob/main/CONTRIBUTING.md
+
 strict-sigcheck = false
 
-# ==========================================
-# YOUTUBE - MorpheApp patches
-# ==========================================
-[YouTube-Morphe]                          
-enabled = false
-app-name = "YouTube"
-brand = "Morphe"
-arch = "all"
-version = "auto"
+[YouTube]
+enabled = true
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
-uptodown-dlurl = "https://youtube.en.uptodown.com/android"
+
+[YouTube.patches]
+"github:MorpheApp/morphe-patches" = []
+
+[YT-Music]
+enabled = true
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
+arch = "both"
+
+[YT-Music.patches]
+"github:MorpheApp/morphe-patches" = []
+
+[Reddit]
+enabled = true
+apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit"
+
+[Reddit.patches]
+"github:MorpheApp/morphe-patches" = []
+
+[YouTube-Experimental]
+enabled = false
+brand = "morphe-dev"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
+version = "exp"
 patcher-args = "-e 'Change header' -Ocustom=icons/YouTube/header -e 'Custom branding' -OcustomIcon=icons/YouTube/branding -OcustomName='YouTube Morphe'"
 
-[YouTube-Morphe.patches]               
+[YouTube-Experimental.patches]
 "github:MorpheApp/morphe-patches" = { version = "dev" }
-
-# ==========================================
-# YT-MUSIC - MorpheApp patches
-# ==========================================
 
 [YT-Music-Experimental]
 enabled = false
 brand = "morphe-dev"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 arch = "both"
-version = "auto"
+version = "exp"
 patcher-args = "-e 'Change header' -Ocustom=icons/Music/header -e 'Custom branding' -OcustomIcon=icons/Music/branding -OcustomName='Music Morphe'"
 
 [YT-Music-Experimental.patches]
 "github:MorpheApp/morphe-patches" = { version = "dev" }
-# ==========================================
-# YOUTUBE - anddea patches (ReVanced Extended)
-# ==========================================
-[YouTube-anddea]                          # <-- NAME CHANGE
-enabled = true
-app-name = "YouTube"
-brand = "ReVanced-Extended"
-arch = "all"
-version = "auto"
-uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
-patcher-args = """
-    -e 'MaterialYou' \
-    -e 'Return YouTube Username' \
-    -e 'Custom branding icon for YouTube' -OappIcon='mmt_turquoise' -OchangeSplashIcon='true' -OrestoreOldSplashAnimation='true' \
-    -e 'Custom header for YouTube' -OcustomHeader='custom_branding_icon' \
-    -e 'Theme' -OdarkThemeBackgroundColor=@android:color/black \
-    -e 'Settings for YouTube' -OrvxSettingsLabel='Revanced Extended' -OinsertPosition=@string/about_key
-    """
 
-[YouTube-anddea.patches]                  # <-- NAME CHANGE
-"github:anddea/revanced-patches" = { version = "dev", include = ["Custom header for YouTube"], exclude = ["Custom branding name for YouTube", "Visual preferences icons for YouTube"] }
+[Reddit-Experimental]
+enabled = false
+brand = "morphe-dev"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit"
+version = "exp"
+patcher-args = "-e 'Custom branding name for Reddit' -OappName='Reddit Morphe'"
 
-# ==========================================
-# X-TWITTER (Piko + x-shim)
-# ==========================================
+[Reddit-Experimental.patches]
+"github:MorpheApp/morphe-patches" = { version = "dev" }
+
 [X-Twitter]
 enabled = true
 brand = "piko"
-version = "12.11.0-release.0"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter"
-uptodown-dlurl = "https://twitter.en.uptodown.com/android"
 
 [X-Twitter.patches]
-"github:crimera/piko" = { version = "dev" }
-"gitlab:inotia00/x-shim" = { version = "dev" }
+"github:crimera/piko" = ["Browse tweet object", "Dynamic color"]
 
-# ==========================================
-# INSTAGRAM (Piko)
-# ==========================================
 [Instagram]
 enabled = true
 brand = "piko"
-github-dlurl = "https://github.com/krvstek/uni-storage/releases/tag/instagram"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
-uptodown-dlurl = "https://instagram.en.uptodown.com/android"
 arch = "arm64-v8a"
-version = "auto"
 patcher-args = "-e 'Theme' -Oamoled=true"
 
 [Instagram.patches]
-"github:crimera/piko" = { version = "dev" }
+"github:crimera/piko" = []
 
-# ==========================================
-# TELEGRAM (Paresh patches)
-# ==========================================
+[Google-Photos]
+enabled = false
+brand = "rushi"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/photos/"
+changelog-keywords = ["Photos"]
+
+[Google-Photos.patches]
+"github:rushiranpise/morphe-patches" = []
+
+[Messenger]
+enabled = false
+brand = "rushi"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/facebook-technologies-llc/messenger/"
+arch = "both"
+changelog-keywords = ["Messenger"]
+
+[Messenger.patches]
+"github:rushiranpise/morphe-patches" = []
+
+[Amazon-Shopping]
+enabled = false
+brand = "rushi"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-shopping/"
+changelog-keywords = ["Amazon"]
+
+[Amazon-Shopping.patches]
+"github:rushiranpise/morphe-patches" = []
+
+[Block-Blast]
+enabled = false
+brand = "rushi"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/hungrystudio/block-blast-puzzle-games/"
+changelog-keywords = ["Block Blast"]
+
+[Block-Blast.patches]
+"github:rushiranpise/morphe-patches" = []
+
 [Telegram]
-enabled = true
-brand = "paresh"
+enabled = false
+brand = "rushi"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram-web-version/"
-uptodown-dlurl = "https://telegram.en.uptodown.com/android"
-
+changelog-keywords = ["Telegram"]
 
 [Telegram.patches]
-"gitlab:Paresh-Maheshwari/paresh-patches" = { version = "dev" }
+"github:rushiranpise/morphe-patches" = []
 
-# ==========================================
-# TRUECALLER (Paresh patches)
-# ==========================================
+[Duolingo]
+enabled = false
+brand = "rushi"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/duolingo/duolingo-duolingo/"
+changelog-keywords = ["Duolingo"]
+
+[Duolingo.patches]
+"github:rushiranpise/morphe-patches" = []
+
+[Adobe-Acrobat] 
+enabled = false
+brand = "rushi"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/adobe/adobe-acrobat/"
+changelog-keywords = ["Acrobat"]
+
+[Adobe-Acrobat.patches]
+"github:rushiranpise/morphe-patches" = []
+
+[Proton-VPN]
+enabled = false
+brand = "rushi"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/proton-technologies-ag/protonvpn-secure-and-free-vpn/"
+changelog-keywords = ["Proton"]
+
+[Proton-VPN.patches]
+"github:rushiranpise/morphe-patches" = []
+
+[Prime-Video]
+enabled = false
+brand = "hoo-dles"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-prime-video/"
+arch = "arm64-v8a"
+changelog-keywords = ["Prime Video"]
+
+[Prime-Video.patches]
+"github:hoo-dles/morphe-patches" = []
+
+[WPS-Office]
+enabled = false
+brand = "hoo-dles"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/wps-software-pte-ltd/wps-office-pdf/"
+changelog-keywords = ["WPS"]
+
+[WPS-Office.patches]
+"github:hoo-dles/morphe-patches" = []
+
+[CamScanner]
+enabled = false
+brand = "hoo-dles"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/intsig-information-co-ltd/camscanner-phone-pdf-creator/"
+changelog-keywords = ["CamScanner"]
+
+[CamScanner.patches]
+"github:hoo-dles/morphe-patches" = []
+
+[InShot]
+enabled = false
+brand = "hooman"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/inshot-inc/inshot-video-editor-photo-editor/"
+changelog-keywords = ["InShot"]
+
+[InShot.patches]
+"github:arandomhooman/hoomans-morphe-patches" = []
+
+[Twitch]
+enabled = false
+brand = "hooman"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
+changelog-keywords = ["Twitch"]
+
+[Twitch.patches]
+"github:arandomhooman/hoomans-morphe-patches" = []
+
 [Truecaller]
-enabled = true
+enabled = false
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/true-software-scandinavia-ab/truecaller-caller-id-block/"
-uptodown-dlurl = "https://truecaller.en.uptodown.com/android"
+changelog-keywords = ["Truecaller"]
 
 [Truecaller.patches]
 "gitlab:Paresh-Maheshwari/paresh-patches" = []
 
+[JioHotstar]
+enabled = false
+brand = "paresh"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/jiostar-india-private-limited/jiohotstar-4/"
+changelog-keywords = ["JioHotstar"]
 
-# 1.1.1.1 - Cloudflare DNS
-["1.1.1.1"]
-enabled = true
-brand = "rushi"
-app-name = "1.1.1.1"
-uptodown-dlurl = "https://1-1-1-1.en.uptodown.com/android"
-version = "auto"
+[JioHotstar.patches]
+"gitlab:Paresh-Maheshwari/paresh-patches" = []
 
-["1.1.1.1".patches]
-"github:rushiranpise/morphe-patches" = []
+[Facebook]
+enabled = false
+brand = "de-vanced"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/facebook-2/facebook/"
+arch = "both"
 
-[Hola-VPN]
-enabled = true
-brand = "rushi"
-uptodown-dlurl = "https://holavpn.en.uptodown.com/android"
-arch = "arm64-v8a"
-changelog-keywords = ["Hola VPN"]
+[Facebook.patches]
+"github:RookieEnough/De-Vanced" = []
 
-[Hola-VPN.patches]
-"github:rushiranpise/morphe-patches" = []
+[Viber]
+enabled = false
+brand = "de-vanced"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/viber-media-s-a-r-l/viber/"
+
+[Viber.patches]
+"github:RookieEnough/De-Vanced" = []
+
+[TikTok]
+enabled = false
+brand = "tiktok"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
+
+[TikTok.patches]
+"github:icysymmetra/tiktok-patches-for-morphe" = []
