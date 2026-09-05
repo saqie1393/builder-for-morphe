@@ -3,14 +3,14 @@
 strict-sigcheck = false
 
 [YouTube]
-enabled = true
+enabled = false
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 
 [YouTube.patches]
 "github:MorpheApp/morphe-patches" = []
 
 [YT-Music]
-enabled = true
+enabled = false
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 arch = "both"
 
@@ -111,7 +111,7 @@ changelog-keywords = ["Block Blast"]
 "github:rushiranpise/morphe-patches" = []
 
 [Telegram]
-enabled = false
+enabled = true
 brand = "rushi"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram-web-version/"
 changelog-keywords = ["Telegram"]
@@ -157,7 +157,7 @@ changelog-keywords = ["Prime Video"]
 "github:hoo-dles/morphe-patches" = []
 
 [WPS-Office]
-enabled = false
+enabled = true
 brand = "hoo-dles"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/wps-software-pte-ltd/wps-office-pdf/"
 changelog-keywords = ["WPS"]
@@ -166,7 +166,7 @@ changelog-keywords = ["WPS"]
 "github:hoo-dles/morphe-patches" = []
 
 [CamScanner]
-enabled = false
+enabled = true
 brand = "hoo-dles"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/intsig-information-co-ltd/camscanner-phone-pdf-creator/"
 changelog-keywords = ["CamScanner"]
@@ -175,7 +175,7 @@ changelog-keywords = ["CamScanner"]
 "github:hoo-dles/morphe-patches" = []
 
 [InShot]
-enabled = false
+enabled = true
 brand = "hooman"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/inshot-inc/inshot-video-editor-photo-editor/"
 changelog-keywords = ["InShot"]
@@ -193,7 +193,7 @@ changelog-keywords = ["Twitch"]
 "github:arandomhooman/hoomans-morphe-patches" = []
 
 [Truecaller]
-enabled = false
+enabled = true
 brand = "paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/true-software-scandinavia-ab/truecaller-caller-id-block/"
 changelog-keywords = ["Truecaller"]
@@ -211,7 +211,7 @@ changelog-keywords = ["JioHotstar"]
 "gitlab:Paresh-Maheshwari/paresh-patches" = []
 
 [Facebook]
-enabled = false
+enabled = true
 brand = "de-vanced"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/facebook-2/facebook/"
 arch = "both"
